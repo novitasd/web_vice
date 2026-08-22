@@ -1,0 +1,326 @@
+.shipping-step {
+  width: 100%;
+  max-width: 820px;
+}
+
+
+/* =========================
+   ENCABEZADO
+========================= */
+
+.shipping-heading {
+  margin-bottom: 40px;
+}
+
+.shipping-back {
+  padding: 0;
+  margin-bottom: 25px;
+
+  border: none;
+  background: transparent;
+
+  color: #111;
+  font-family: inherit;
+  font-size: 13px;
+
+  cursor: pointer;
+
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.shipping-heading h1 {
+  margin: 0 0 12px;
+
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.2;
+
+  color: #111;
+}
+
+.shipping-heading p {
+  margin: 0;
+
+  font-size: 14px;
+  line-height: 1.5;
+
+  color: #444;
+}
+
+
+/* =========================
+   FORMULARIO
+========================= */
+
+.shipping-form {
+  width: 100%;
+}
+
+.shipping-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 14px;
+}
+
+.shipping-field {
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.shipping-field label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-size: 13px;
+  font-weight: 400;
+
+  color: #111;
+}
+
+.shipping-field label span {
+  color: #111;
+}
+
+
+/* =========================
+   INPUTS Y SELECTS
+========================= */
+
+.shipping-field input,
+.shipping-field select {
+  width: 100%;
+  height: 46px;
+
+  padding: 0 14px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #999;
+  border-radius: 0;
+
+  outline: none;
+
+  background: #fff;
+  color: #111;
+
+  font-family: inherit;
+  font-size: 14px;
+
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+
+/* FOCUS */
+
+.shipping-field input:focus,
+.shipping-field select:focus {
+  border-color: #111;
+}
+
+
+/* PLACEHOLDER */
+
+.shipping-field input::placeholder {
+  color: #888;
+}
+
+
+/* =========================
+   SELECTS
+========================= */
+
+.shipping-field select {
+  cursor: pointer;
+
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  padding-right: 42px;
+
+  background-image:
+    linear-gradient(45deg, transparent 50%, #111 50%),
+    linear-gradient(135deg, #111 50%, transparent 50%);
+
+  background-position:
+    calc(100% - 18px) 20px,
+    calc(100% - 13px) 20px;
+
+  background-size:
+    5px 5px,
+    5px 5px;
+
+  background-repeat: no-repeat;
+}
+
+
+/* SELECT DESHABILITADO */
+
+.shipping-field select:disabled {
+  cursor: not-allowed;
+
+  color: #999;
+
+  border-color: #d5d5d5;
+
+  background-color: #f7f7f7;
+
+  background-image:
+    linear-gradient(45deg, transparent 50%, #999 50%),
+    linear-gradient(135deg, #999 50%, transparent 50%);
+}
+
+
+/* TEXTO AUXILIAR */
+
+.shipping-field small {
+  display: block;
+
+  margin-top: 7px;
+
+  font-size: 11px;
+  line-height: 1.4;
+
+  color: #666;
+}
+
+
+/* =========================
+   TELÉFONO
+========================= */
+
+.phone-field {
+  display: grid;
+
+  grid-template-columns: 105px 1fr;
+
+  width: 100%;
+}
+
+.phone-prefix {
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 13px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #999;
+  border-right: none;
+
+  font-size: 13px;
+
+  background: #fff;
+  color: #111;
+}
+
+.phone-field input {
+  min-width: 0;
+}
+
+
+/* Cuando el teléfono recibe focus */
+
+.phone-field:focus-within .phone-prefix {
+  border-color: #111;
+}
+
+.phone-field:focus-within input {
+  border-color: #111;
+}
+
+
+/* =========================
+   BOTÓN
+========================= */
+
+.shipping-actions {
+  display: flex;
+  justify-content: flex-end;
+
+  margin-top: 15px;
+  padding-top: 30px;
+
+  border-top: 1px solid #d5d5d5;
+}
+
+.shipping-submit {
+  min-width: 300px;
+  height: 48px;
+
+  padding: 0 28px;
+
+  border: 1px solid #111;
+  border-radius: 0;
+
+  background: #111;
+  color: #fff;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.shipping-submit:hover {
+  background: #333;
+  border-color: #333;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+
+  .shipping-heading {
+    margin-bottom: 30px;
+  }
+
+  .shipping-heading h1 {
+    font-size: 24px;
+  }
+
+  .shipping-row {
+    grid-template-columns: 1fr;
+
+    gap: 0;
+  }
+
+  .shipping-field {
+    margin-bottom: 22px;
+  }
+
+  .phone-field {
+    grid-template-columns: 95px 1fr;
+  }
+
+  .shipping-field input,
+  .shipping-field select {
+    font-size: 16px;
+  }
+
+  .shipping-actions {
+    margin-top: 5px;
+
+    padding-top: 25px;
+  }
+
+  .shipping-submit {
+    width: 100%;
+    min-width: 0;
+  }
+}

@@ -1,0 +1,175 @@
+/* ===========================
+   ACTIONS
+=========================== */
+
+.nav-icons {
+  width: 700px;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  gap: 12px;
+
+  flex-shrink: 0;
+}
+
+.nav-icons button {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: none;
+  background: transparent;
+
+  font-size: 20px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.nav-icons button:hover {
+  background: #e6e6e6;
+  transform: translateY(-2px);
+}
+
+/* ===========================
+   CART
+=========================== */
+
+.cart-button {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: inherit;
+  text-decoration: none;
+
+  font-size: 1.3rem;
+
+  transform-origin: center;
+}
+
+/* REBOTE DEL CARRITO */
+
+.cart-button.cart-bounce {
+  animation: cartBounce 0.5s ease;
+}
+
+@keyframes cartBounce {
+  0% {
+    transform: scale(1);
+  }
+
+  35% {
+    transform: scale(1.25);
+  }
+
+  60% {
+    transform: scale(0.92);
+  }
+
+  80% {
+    transform: scale(1.08);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* ===========================
+   CART COUNT
+=========================== */
+
+.cart-count {
+  position: absolute;
+
+  top: -8px;
+  right: -10px;
+
+  min-width: 18px;
+  height: 18px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 2px 5px;
+
+  border-radius: 50%;
+
+  background: #111;
+  color: #fff;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  transition: transform 0.25s ease;
+}
+
+/* ===========================
+   MOBILE SEARCH BUTTON
+=========================== */
+
+.nav-icons .mobile-search-btn {
+  display: none;
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width: 768px) {
+
+  .nav-icons {
+    width: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    grid-column: 3;
+    grid-row: 1;
+
+    justify-self: end;
+  }
+
+  .user-button {
+    display: none !important;
+  }
+
+  .cart-button {
+    grid-column: 3;
+    grid-row: 1;
+
+    justify-self: end;
+
+    font-size: 1.35rem;
+  }
+
+  .nav-icons .mobile-search-btn {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    background: none;
+
+    font-size: 22px;
+
+    cursor: pointer;
+  }
+}

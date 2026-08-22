@@ -1,0 +1,189 @@
+/*==================================
+            FAQ
+==================================*/
+
+.faq{
+    padding:100px 7%;
+    background:#fff;
+}
+
+/*==================================
+            HEADER
+==================================*/
+
+.faq-header{
+    text-align:center;
+    margin-bottom:70px;
+}
+
+.faq-header span{
+    display:block;
+    font-size:.85rem;
+    font-weight:600;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    color:#777;
+    margin-bottom:15px;
+}
+
+.faq-header h2{
+    font-size:clamp(2.4rem,4vw,4.5rem);
+    font-weight:900;
+    line-height:1;
+    color:#111;
+}
+
+/*==================================
+        CONTAINER
+==================================*/
+
+.faq-container{
+    max-width:900px;
+    margin:auto;
+}
+
+/*==================================
+            ITEM
+==================================*/
+
+.faq-item{
+
+    border-bottom:1px solid #e8e8e8;
+
+}
+
+.faq-question{
+
+    width:100%;
+
+    background:none;
+
+    border:none;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:28px 0;
+
+    cursor:pointer;
+
+    font-size:1.15rem;
+
+    font-weight:600;
+
+    color:#111;
+
+    transition:.3s;
+
+}
+
+.faq-question:hover{
+
+    color:#555;
+
+}
+
+.faq-question span{
+
+    text-align:left;
+
+    flex:1;
+
+}
+
+.faq-question svg{
+
+    font-size:18px;
+
+    color:#111;
+
+    transition:.35s;
+
+}
+
+/*==================================
+            ANSWER
+==================================*/
+
+.faq-answer{
+
+    max-height:0;
+
+    overflow:hidden;
+
+    transition:max-height .4s ease;
+
+}
+
+.faq-answer p{
+
+    color:#666;
+
+    line-height:1.8;
+
+    padding:0 0 25px;
+
+    max-width:750px;
+
+}
+
+/*==================================
+            ACTIVE
+==================================*/
+
+.faq-item.active .faq-answer{
+
+    max-height:250px;
+
+}
+
+.faq-item.active .faq-question svg{
+
+    transform:rotate(180deg);
+
+}
+
+/*==================================
+        RESPONSIVE
+==================================*/
+
+@media(max-width:768px){
+
+.faq{
+
+    padding:70px 20px;
+
+}
+
+.faq-header{
+
+    text-align:left;
+
+    margin-bottom:50px;
+
+}
+
+.faq-header h2{
+
+    font-size:2.2rem;
+
+}
+
+.faq-question{
+
+    font-size:1rem;
+
+    padding:22px 0;
+
+}
+
+.faq-answer p{
+
+    font-size:.95rem;
+
+}
+
+}

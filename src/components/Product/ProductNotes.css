@@ -1,0 +1,29 @@
+/* ===========================
+   INFORMACIÓN
+=========================== */
+
+.product-notes{
+    margin-top:40px;
+}
+
+.stock,
+.shipping,
+.returns,
+.payments{
+    padding:18px 0;
+    border-bottom:1px solid #ececec;
+}
+
+.shipping,
+.returns,
+.payments{
+    display:flex;
+    gap:15px;
+}
+
+.shipping svg,
+.returns svg,
+.payments svg{
+    font-size:22px;
+    flex-shrink:0;
+}

@@ -1,0 +1,84 @@
+.brand-tabs {
+  width: 100%;
+   margin:30px 0;
+}
+
+.brand-tabs-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+
+  overflow-x: auto;
+  scrollbar-width: none;
+
+  padding: 0 20px;
+}
+
+.brand-tabs-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.brand-tabs-nav button {
+  position: relative;
+
+  background: none;
+  border: none;
+  outline: none;
+
+  cursor: pointer;
+
+  font-size: 16px;
+  font-weight: 500;
+
+  color: #8b8b8b;
+
+  padding: 0 0 12px;
+
+  white-space: nowrap;
+
+  transition: color .25s ease;
+}
+
+.brand-tabs-nav button:hover {
+  color: #111;
+}
+
+.brand-tabs-nav button.active {
+  color: #111;
+}
+
+.brand-tabs-nav button::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: 0;
+
+  width: 0;
+  height: 2px;
+
+  background: #111;
+
+  transform: translateX(-50%);
+
+  transition: width .25s ease;
+}
+
+.brand-tabs-nav button.active::after {
+  width: 100%;
+}
+
+@media (max-width:768px){
+
+  .brand-tabs{
+      margin:30px 0;
+  }
+
+  .brand-tabs-nav{
+      justify-content:flex-start;
+      gap:28px;
+  }
+
+}

@@ -1,0 +1,472 @@
+/*==================================
+        STYLE CATEGORIES
+===================================*/
+
+.style-categories {
+    padding: 100px 7%;
+    background: #fff;
+    overflow: hidden;
+}
+
+
+/*==================================
+            HEADER
+===================================*/
+
+.style-header {
+    margin-bottom: 70px;
+}
+
+.style-header span {
+    display: block;
+    margin-bottom: 14px;
+
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 5px;
+
+    color: #777;
+    text-transform: uppercase;
+}
+
+.style-header h2 {
+    margin: 0;
+
+    font-size: clamp(2.8rem, 5vw, 5.5rem);
+    font-weight: 950;
+
+    line-height: 0.9;
+    letter-spacing: -3px;
+
+    color: #111;
+    text-transform: uppercase;
+}
+
+
+/*==================================
+        CATEGORIES CONTAINER
+===================================*/
+
+.style-slider {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 45px;
+    align-items: start;
+}
+
+
+/*==================================
+            CARD
+===================================*/
+
+.style-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-decoration: none;
+    cursor: pointer;
+
+    color: #111;
+}
+
+
+/*==================================
+        URBAN CIRCLE
+===================================*/
+
+.style-image {
+    position: relative;
+
+    width: min(24vw, 290px);
+    aspect-ratio: 1;
+
+    border-radius: 50%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        background 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+/*==================================
+        CATEGORY NAME
+===================================*/
+
+.style-image strong {
+    position: relative;
+    z-index: 2;
+
+    max-width: 90%;
+
+    font-size: clamp(2rem, 3vw, 4rem);
+    font-weight: 950;
+
+    line-height: 0.85;
+    letter-spacing: -3px;
+
+    text-align: center;
+    text-transform: uppercase;
+
+    color: #111;
+
+    transition:
+        color 0.35s ease,
+        transform 0.35s ease;
+}
+
+
+/*==================================
+            URBAN ///
+===================================*/
+
+.style-lines {
+    position: relative;
+    z-index: 2;
+
+    margin-top: 12px;
+
+    font-size: 1.1rem;
+    font-weight: 950;
+    letter-spacing: 6px;
+
+    color: rgba(0, 0, 0, 0.45);
+
+    transform: skewX(-15deg);
+
+    transition:
+        color 0.35s ease,
+        transform 0.35s ease;
+}
+
+
+/*==================================
+        DECORATIVE LINE
+===================================*/
+
+.style-image::before {
+    content: "";
+
+    position: absolute;
+
+    width: 140%;
+    height: 2px;
+
+    background: rgba(0, 0, 0, 0.12);
+
+    transform: rotate(-25deg);
+
+    transition: 0.35s ease;
+}
+
+
+/*==================================
+            TAG
+===================================*/
+
+.style-card p {
+    margin: 24px 0 0;
+
+    font-size: 0.7rem;
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+    color: #777;
+
+    text-align: center;
+    text-transform: uppercase;
+
+    transition:
+        color 0.3s ease,
+        letter-spacing 0.3s ease;
+}
+
+
+/*==================================
+        G5 — MÁXIMA CALIDAD
+===================================*/
+
+.style-card.g5 .style-image {
+    background: linear-gradient(
+        135deg,
+        #f0d58a,
+        #c99a32
+    );
+}
+
+.style-card.g5 .style-image strong {
+    color: #111;
+}
+
+.style-card.g5 .style-card p {
+    color: #8a6418;
+}
+
+
+/* HOVER G5 */
+
+.style-card.g5:hover .style-image {
+    background: #111;
+
+    transform:
+        translateY(-10px)
+        rotate(-3deg);
+
+    box-shadow:
+        0 25px 50px rgba(201, 154, 50, 0.35);
+}
+
+.style-card.g5:hover .style-image strong {
+    color: #f0d58a;
+    transform: scale(1.06);
+}
+
+.style-card.g5:hover .style-lines {
+    color: #f0d58a;
+}
+
+.style-card.g5:hover .style-image::before {
+    background: rgba(240, 213, 138, 0.3);
+}
+
+.style-card.g5:hover p {
+    color: #8a6418;
+    letter-spacing: 4px;
+}
+
+
+/*==================================
+        IMPORTADA — NIVEL MEDIO
+===================================*/
+
+.style-card.importada .style-image {
+    background: linear-gradient(
+        135deg,
+        #b9d8ff,
+        #4d8fe3
+    );
+}
+
+.style-card.importada .style-image strong {
+    color: #0c1b30;
+}
+
+
+/* HOVER IMPORTADA */
+
+.style-card.importada:hover .style-image {
+    background: #111;
+
+    transform:
+        translateY(-10px)
+        rotate(-3deg);
+
+    box-shadow:
+        0 25px 50px rgba(37, 99, 235, 0.3);
+}
+
+.style-card.importada:hover .style-image strong {
+    color: #7db5ff;
+    transform: scale(1.06);
+}
+
+.style-card.importada:hover .style-lines {
+    color: #7db5ff;
+}
+
+.style-card.importada:hover .style-image::before {
+    background: rgba(125, 181, 255, 0.3);
+}
+
+.style-card.importada:hover p {
+    color: #2563eb;
+    letter-spacing: 4px;
+}
+
+
+/*==================================
+        PREMIUM — NIVEL BASE
+===================================*/
+
+.style-card.premium .style-image {
+    background: linear-gradient(
+        135deg,
+        #f0f0f0,
+        #a9a9a9
+    );
+}
+
+.style-card.premium .style-image strong {
+    color: #111;
+}
+
+
+/* HOVER PREMIUM */
+
+.style-card.premium:hover .style-image {
+    background: #111;
+
+    transform:
+        translateY(-10px)
+        rotate(-3deg);
+
+    box-shadow:
+        0 25px 50px rgba(0, 0, 0, 0.2);
+}
+
+.style-card.premium:hover .style-image strong {
+    color: #fff;
+    transform: scale(1.06);
+}
+
+.style-card.premium:hover .style-lines {
+    color: #bbb;
+}
+
+.style-card.premium:hover .style-image::before {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.style-card.premium:hover p {
+    color: #111;
+    letter-spacing: 4px;
+}
+
+
+/*==================================
+        TABLET
+===================================*/
+
+@media (max-width: 992px) {
+
+    .style-categories {
+        padding: 85px 6%;
+    }
+
+    .style-slider {
+        gap: 25px;
+    }
+
+    .style-image {
+        width: min(27vw, 240px);
+    }
+
+    .style-image strong {
+        letter-spacing: -2px;
+    }
+
+}
+
+
+/*==================================
+            MOBILE
+===================================*/
+
+@media (max-width: 768px) {
+
+    .style-categories {
+        padding: 75px 20px;
+    }
+
+    .style-header {
+        margin-bottom: 50px;
+    }
+
+    .style-header span {
+        font-size: 0.65rem;
+        letter-spacing: 4px;
+    }
+
+    .style-header h2 {
+        font-size: clamp(2.5rem, 11vw, 4rem);
+        letter-spacing: -2px;
+    }
+
+    .style-slider {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .style-card {
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 25px;
+    }
+
+    .style-image {
+        width: 125px;
+        flex-shrink: 0;
+    }
+
+    .style-image strong {
+        font-size: 1.5rem;
+        letter-spacing: -1.5px;
+    }
+
+    .style-lines {
+        margin-top: 6px;
+
+        font-size: 0.8rem;
+        letter-spacing: 4px;
+    }
+
+    .style-card p {
+        margin: 0;
+
+        font-size: 0.65rem;
+
+        text-align: left;
+        line-height: 1.6;
+    }
+
+    .style-card:hover .style-image {
+        transform:
+            translateY(-5px)
+            rotate(-2deg);
+    }
+
+}
+
+
+/*==================================
+        SMALL MOBILE
+===================================*/
+
+@media (max-width: 480px) {
+
+    .style-categories {
+        padding: 65px 18px;
+    }
+
+    .style-header h2 {
+        font-size: 2.4rem;
+    }
+
+    .style-card {
+        gap: 18px;
+    }
+
+    .style-image {
+        width: 105px;
+    }
+
+    .style-image strong {
+        font-size: 1.2rem;
+    }
+
+    .style-card p {
+        font-size: 0.58rem;
+        letter-spacing: 2px;
+    }
+
+}

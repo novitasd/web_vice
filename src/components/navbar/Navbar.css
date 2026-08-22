@@ -1,0 +1,95 @@
+.navbar{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    height:80px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 60px;
+
+    background:#fff;
+    border-bottom:1px solid #ececec;
+}
+/* Logo */
+
+.navbar > :nth-child(2){
+    justify-self:start;
+}
+
+/* NavLinks */
+
+.navbar > :nth-child(3){
+    justify-self:center;
+}
+
+/* Iconos */
+
+.nav-icons{
+
+    justify-self:end;
+
+    display:flex;
+    align-items:center;
+
+    gap:18px;
+
+}
+
+/* ===========================
+   MENU BUTTON
+=========================== */
+
+.menu-btn {
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    background: none;
+
+    font-size: 26px;
+
+    cursor: pointer;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        height: auto;
+        min-height: 80px;
+
+        padding: 15px 18px;
+
+        display: grid;
+        grid-template-columns: 45px 1fr auto;
+        grid-template-rows: auto auto;
+
+        align-items: center;
+
+        gap: 12px 10px;
+    }
+
+    .menu-btn {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        grid-column: 1;
+        grid-row: 1;
+
+        width: 42px;
+        height: 42px;
+
+        padding: 0;
+    }
+
+}

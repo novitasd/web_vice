@@ -1,0 +1,203 @@
+.topbar{
+    height:42px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    transition:background .6s ease;
+}
+
+.topbar-info{
+
+    width:min(1280px,95%);
+
+    display:grid;
+    grid-template-columns:140px 1fr 140px;
+
+    align-items:center;
+
+}
+
+.topbar-status{
+
+    color:#fff;
+
+    font-size:11px;
+
+    font-weight:600;
+
+    letter-spacing:1px;
+
+    text-transform:uppercase;
+
+    opacity:.8;
+
+}
+
+.topbar-status::before{
+
+    content:"";
+
+    display:inline-block;
+
+    width:7px;
+    height:7px;
+
+    border-radius:50%;
+
+    background:#22c55e;
+
+    margin-right:8px;
+
+    vertical-align:middle;
+
+}
+
+.buy-text{
+
+    color:#fff;
+
+    text-align:center;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    animation:fade .45s;
+
+}
+
+.whatsapp-btn{
+
+    justify-self:end;
+
+    display:flex;
+    align-items:center;
+    gap:6px;
+
+    padding:5px 12px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.1);
+
+    color:#fff;
+
+    text-decoration:none;
+
+    font-size:12px;
+
+    transition:.25s;
+
+}
+
+.whatsapp-btn:hover{
+
+    background:rgba(255,255,255,.15);
+
+}
+
+.whatsapp-btn svg{
+
+    color:#25D366;
+
+}
+
+@keyframes fade{
+
+    from{
+
+        opacity:0;
+        transform:translateY(5px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+@media (max-width:768px){
+
+    .topbar{
+
+        height:36px;
+
+        padding:0 10px;
+
+    }
+
+    .topbar-info{
+
+        width:100%;
+
+        display:grid;
+
+        grid-template-columns:1fr auto;
+
+        align-items:center;
+
+        gap:12px;
+
+    }
+
+    /* Ocultar el estado */
+
+    .topbar-status{
+
+        display:none;
+
+    }
+
+    .buy-text{
+
+        text-align:left;
+
+        font-size:12px;
+
+        font-weight:500;
+
+        white-space:nowrap;
+
+        overflow:hidden;
+
+        text-overflow:ellipsis;
+
+    }
+
+    .whatsapp-btn{
+
+        padding:0;
+
+        width:30px;
+        height:30px;
+
+        display:flex;
+        justify-content:center;
+        align-items:center;
+
+        border:none;
+
+        background:transparent;
+
+    }
+
+    .whatsapp-btn span{
+
+        display:none;
+
+    }
+
+    .whatsapp-btn svg{
+
+        font-size:18px;
+
+    }
+
+}

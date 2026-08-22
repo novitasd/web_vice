@@ -1,0 +1,194 @@
+/* =========================================
+   CATÁLOGO
+========================================= */
+
+.catalogo {
+    width: 100%;
+    min-height: 100vh;
+
+    padding: 0 24px 100px;
+
+    background: transparent;
+
+    font-family: Montserrat, sans-serif;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   CONTENIDO
+========================================= */
+
+.productos {
+    width: 100%;
+    max-width: 1420px;
+
+    margin: 0 auto;
+
+    padding-top: 55px;
+}
+
+
+/* =========================================
+   GRID
+========================================= */
+
+.grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    column-gap: 24px;
+    row-gap: 70px;
+
+    width: 100%;
+}
+
+
+/* =========================================
+   SIN PRODUCTOS
+========================================= */
+
+.catalogo-vacio {
+    min-height: 400px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 60px 20px;
+}
+
+.catalogo-vacio h2 {
+    margin: 0 0 10px;
+
+    font-size: 28px;
+    font-weight: 600;
+
+    color: #111;
+}
+
+.catalogo-vacio p {
+    margin: 0 0 25px;
+
+    font-size: 14px;
+
+    color: #777;
+}
+
+.catalogo-vacio-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 46px;
+
+    padding: 0 24px;
+
+    background: #111;
+    color: #fff;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+.catalogo-vacio-btn:hover {
+    background: #292929;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   DESKTOP MEDIANO
+========================================= */
+
+@media (max-width: 1400px) {
+
+    .grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .catalogo {
+        padding: 0 20px 80px;
+    }
+
+    .productos {
+        padding-top: 45px;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        column-gap: 20px;
+        row-gap: 55px;
+    }
+
+}
+
+
+/* =========================================
+   MÓVIL
+========================================= */
+
+@media (max-width: 600px) {
+
+    .catalogo {
+        padding: 0 12px 60px;
+    }
+
+    .productos {
+        padding-top: 35px;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        column-gap: 12px;
+        row-gap: 40px;
+    }
+
+}
+
+
+/* =========================================
+   MÓVILES MUY PEQUEÑOS
+========================================= */
+
+@media (max-width: 380px) {
+
+    .catalogo {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .productos {
+        padding-top: 30px;
+    }
+
+    .grid {
+        column-gap: 10px;
+    }
+
+}

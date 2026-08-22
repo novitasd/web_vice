@@ -1,0 +1,102 @@
+.checkout-page {
+  width: 100%;
+  max-width: 1500px;
+
+  margin: 0 auto;
+
+  padding: 35px 40px 80px;
+
+  box-sizing: border-box;
+}
+
+
+/* ==============================
+   LAYOUT PRINCIPAL
+============================== */
+
+.checkout-layout {
+  display: grid;
+
+  /*
+    Similar a tu referencia:
+    izquierda grande + resumen pequeño
+  */
+  grid-template-columns: minmax(0, 1fr) 340px;
+
+  gap: 55px;
+
+  align-items: start;
+
+  width: 100%;
+}
+
+
+/* ==============================
+   COLUMNA IZQUIERDA
+============================== */
+
+.checkout-main {
+  width: 100%;
+  min-width: 0;
+}
+
+
+/* ==============================
+   RESUMEN DERECHO
+============================== */
+
+.checkout-sidebar {
+  width: 100%;
+  min-width: 0;
+
+  /*
+    IMPORTANTE:
+    se queda visible mientras
+    bajamos por los productos.
+  */
+  position: sticky;
+
+  top: 100px;
+
+  align-self: start;
+}
+
+
+/* ==============================
+   TABLET
+============================== */
+
+@media (max-width: 1100px) {
+
+  .checkout-page {
+    padding: 30px 25px 70px;
+  }
+
+  .checkout-layout {
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: 35px;
+  }
+
+}
+
+
+/* ==============================
+   MOBILE
+============================== */
+
+@media (max-width: 850px) {
+
+  .checkout-page {
+    padding: 25px 18px 60px;
+  }
+
+  .checkout-layout {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .checkout-sidebar {
+    position: static;
+  }
+
+}

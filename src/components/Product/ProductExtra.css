@@ -1,0 +1,49 @@
+/* ===========================
+   DESCRIPCIÓN
+=========================== */
+
+.product-extra{
+    grid-area:extra;
+
+    width:100%;
+    max-width:760px;
+
+    margin-top:90px;
+}
+
+.product-description,
+.product-features,
+.product-shipping-info{
+    padding:45px 0;
+    border-top:1px solid #ececec;
+}
+
+.product-description h2,
+.product-features h2,
+.product-shipping-info h2{
+    font-size:24px;
+    margin-bottom:18px;
+}
+
+.product-description p,
+.product-shipping-info p{
+    line-height:1.8;
+    color:#555;
+}
+
+.product-features ul{
+    padding-left:20px;
+}
+
+.product-features li{
+    margin-bottom:10px;
+}
+
+@media (max-width:1200px){
+
+.product-extra{
+    max-width:100%;
+    margin-top:40px;
+}
+
+}

@@ -1,0 +1,545 @@
+/* ========================================
+   SECCIÓN
+======================================== */
+
+.relatedSection {
+  width: 100%;
+  padding: 80px 0 85px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.relatedContainer {
+  width: 100%;
+  padding: 0 clamp(24px, 4vw, 72px);
+  box-sizing: border-box;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.relatedHeader {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 42px;
+}
+
+.relatedTitle {
+  display: flex;
+  flex-direction: column;
+}
+
+.relatedEyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-bottom: 16px;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 3px;
+  text-transform: uppercase;
+
+  color: #db0000;
+}
+
+.relatedEyebrow::before {
+
+  content: "";
+
+  width: 38px;
+  height: 2px;
+
+  background: #db0000;
+
+  border-radius: 20px;
+
+}
+
+.relatedHeader h2 {
+
+  margin: 0;
+
+  font-size: clamp(32px,3vw,46px);
+
+  font-weight: 650;
+
+  line-height: 1.05;
+
+  letter-spacing: -1.6px;
+
+  color: #111;
+
+  max-width: 620px;
+
+}
+
+.relatedDescription {
+
+  margin-top: 18px;
+
+  max-width: 520px;
+
+  font-size: 18px;
+
+  line-height: 1.7;
+
+  color: #6b6b6b;
+
+}
+
+
+/* ========================================
+   BOTONES
+======================================== */
+
+.relatedButtons {
+
+  display: flex;
+  gap: 12px;
+
+}
+
+.relatedButtons button {
+
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid #e7e7e7;
+  border-radius: 50%;
+
+  background: #fff;
+  color: #111;
+
+  font-size: 18px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 4px 12px rgba(0,0,0,.04);
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease,
+    background .25s ease,
+    color .25s ease,
+    border-color .25s ease;
+
+}
+
+.relatedButtons button:hover {
+
+  background: #111;
+  color: #fff;
+
+  border-color: #111;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 12px 24px rgba(0,0,0,.16);
+
+}
+
+.relatedButtons button:active {
+
+  transform: scale(.95);
+
+  box-shadow:
+    0 4px 10px rgba(0,0,0,.12);
+
+}
+/* ========================================
+   SLIDER
+======================================== */
+
+.relatedSlider {
+  display: flex;
+
+  gap: 24px;
+
+  overflow-x: auto;
+
+  scroll-behavior: smooth;
+
+  scroll-snap-type: x mandatory;
+
+  scrollbar-width: none;
+}
+
+.relatedSlider::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* ========================================
+   CARD BASE
+======================================== */
+
+.relatedCategoryCard {
+  flex: 0 0 calc((100% - 48px) / 3);
+
+  min-width: 0;
+
+  display: block;
+
+  text-decoration: none;
+
+  color: #111;
+
+  scroll-snap-align: start;
+}
+
+
+/* ========================================
+   IMAGEN
+======================================== */
+
+.relatedImage {
+
+  position: relative;
+
+  width: 100%;
+  height: 360px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: #fff;
+
+  overflow: hidden;
+
+}
+
+.relatedImage img {
+
+  display: block;
+
+  width: 82%;
+  height: 82%;
+
+  object-fit: contain;
+
+  transform: scale(1);
+
+  transition:
+    transform .5s cubic-bezier(.22,.61,.36,1);
+
+}
+
+.relatedCategoryCard:hover .relatedImage img {
+
+  transform: scale(1.07);
+
+}
+
+
+/* ========================================
+   INFORMACIÓN
+======================================== */
+
+.relatedInfo {
+
+  position: relative;
+
+  display: flex;
+
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 20px 2px 0;
+
+  border-top: 1px solid #ededed;
+
+}
+
+.relatedLabel {
+
+  display: block;
+
+  margin-bottom: 6px;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 1.5px;
+
+  color: #999;
+
+}
+
+.relatedInfo h3 {
+
+  margin: 0;
+
+  font-size: 20px;
+
+  line-height: 1.1;
+
+  font-weight: 600;
+
+  letter-spacing: -.5px;
+
+  color: #111;
+
+}
+
+
+/* ========================================
+   FLECHA
+======================================== */
+
+.relatedArrow {
+
+  width: 40px;
+  height: 40px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #f4f4f4;
+
+  color: #111;
+
+  font-size: 17px;
+
+  transition:
+    background .3s ease,
+    color .3s ease,
+    transform .3s ease;
+
+}
+
+.relatedCategoryCard:hover .relatedArrow {
+
+  background: #111;
+
+  color: #fff;
+
+  transform: translateX(3px);
+
+}
+/* ========================================
+   CARD
+======================================== */
+
+.relatedCard {
+
+    /* 4 productos visibles */
+
+    flex: 0 0 calc((100% - 72px) / 4);
+
+    min-width: 0;
+
+    text-decoration: none;
+
+    color: #111;
+
+    scroll-snap-align: start;
+
+    transition: opacity .25s ease;
+
+}
+
+.relatedCard:hover {
+
+    color: #111;
+
+}
+
+
+/* ========================================
+   IMAGEN
+======================================== */
+
+.relatedCard .relatedImage {
+
+    width: 100%;
+    height: 350px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background: #fff;
+
+}
+
+.relatedCard .relatedImage img {
+
+    width: 88%;
+    height: 88%;
+
+    object-fit: contain;
+
+    transition: transform .4s ease;
+
+}
+
+.relatedCard:hover .relatedImage img {
+
+    transform: scale(1.05);
+
+}
+
+
+/* ========================================
+   INFORMACIÓN
+======================================== */
+
+.relatedCard .relatedInfo {
+
+    border-top: 1px solid #e5e5e5;
+
+    padding: 18px 2px 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 15px;
+
+}
+
+.relatedCard .relatedLabel {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: 1.4px;
+
+    text-transform: uppercase;
+
+    color: #777;
+
+}
+
+.relatedCard h3 {
+
+    margin: 0;
+
+    font-size: 18px;
+
+    line-height: 1.25;
+
+    font-weight: 600;
+
+    color: #111;
+
+}
+
+.relatedPrice {
+
+    display: block;
+
+    margin-top: 9px;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    color: #111;
+
+}
+.relatedCard:hover .relatedArrow {
+
+  background: hsla(40, 2%, 30%, 0.678);
+
+  color: #fff;
+
+
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1024px) {
+
+    .relatedCard {
+
+        flex: 0 0 calc((100% - 24px) / 2);
+
+    }
+
+    .relatedCard .relatedImage {
+
+        height: 320px;
+
+    }
+
+}
+
+
+/* ========================================
+   MÓVIL
+======================================== */
+
+@media (max-width: 600px) {
+
+    .relatedCard {
+
+        /* Se ve parte del siguiente producto */
+
+        flex: 0 0 84%;
+
+    }
+
+    .relatedCard .relatedImage {
+
+        height: 300px;
+
+    }
+     
+    .relatedButtons{
+        display: none;
+    }
+     .relatedHeader h2 {
+        font-size: 23px;
+     }
+    .relatedDescription{
+        font-size: 14px;
+    }
+    .relatedCard h3 {
+
+        font-size: 17px;
+
+    }
+
+    .relatedPrice {
+
+        font-size: 15px;
+
+    }
+
+}

@@ -1,0 +1,162 @@
+/* ===========================
+   GALERÍA
+=========================== */
+
+.product-left {
+    grid-area: left;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===========================
+   DESKTOP
+=========================== */
+
+.desktop-gallery {
+    display: grid;
+}
+
+.product-gallery {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 10px;
+}
+
+.gallery-thumbnails {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.thumbnail {
+    width: 100px;
+    height: 100px;
+    padding: 6px;
+
+    background: #fff;
+    border: 1px solid #ececec;
+
+    cursor: pointer;
+    transition: .25s;
+}
+
+.thumbnail:hover,
+.thumbnail.active {
+    border-color: #111;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.gallery-main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    background: #fff;
+
+    min-height: 720px;
+}
+
+.main-image {
+    width: 100%;
+    max-width: 760px;
+    height: 720px;
+
+    object-fit: contain;
+}
+
+/* ===========================
+   MOBILE EMBLA
+=========================== */
+
+.mobile-gallery {
+    display: none;
+}
+
+.embla {
+    overflow: hidden;
+    width: 100%;
+}
+
+.embla__container {
+    display: flex;
+}
+
+.embla__slide {
+    flex: 0 0 100%;
+}
+
+.embla__slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+.embla-dots{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:8px;
+    margin-top:18px;
+}
+
+.embla-dot{
+    width:8px;
+    height:8px;
+    border:none;
+    border-radius:50%;
+    background:#d5d5d5;
+    padding:0;
+    cursor:pointer;
+    transition:all .25s ease;
+}
+
+.embla-dot.active{
+    width:24px;
+    border-radius:999px;
+    background:#111;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width:1200px) {
+
+    .gallery-main {
+        min-height: auto;
+    }
+
+    .main-image {
+        height: auto;
+        max-width: 100%;
+    }
+
+}
+
+@media (max-width:768px) {
+
+    .desktop-gallery {
+        display: none;
+    }
+
+    .mobile-gallery {
+        display: block;
+    }
+
+    .embla {
+        touch-action: pan-y;
+    }
+
+    .main-image {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+    }
+
+}

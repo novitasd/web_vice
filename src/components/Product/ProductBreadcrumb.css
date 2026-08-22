@@ -1,0 +1,41 @@
+/* ===========================
+   BREADCRUMB
+=========================== */
+
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+
+  margin-bottom: 40px;
+
+  font-size: 13px;
+  color: #777;
+}
+
+.breadcrumb a {
+  color: #777;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.breadcrumb a:hover {
+  color: #111;
+}
+
+.breadcrumb span:last-child {
+  color: #111;
+  font-weight: 500;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width: 768px) {
+  .breadcrumb {
+    margin-bottom: 12px;
+    font-size: 12px;
+  }
+}

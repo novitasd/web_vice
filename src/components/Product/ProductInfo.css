@@ -1,0 +1,241 @@
+/* ===========================
+   PANEL DERECHO
+=========================== */
+
+.product-info {
+  grid-area: info;
+  position: sticky;
+  top: 110px;
+}
+
+/* ===========================
+   FAVORITOS
+=========================== */
+
+.wishlist {
+  width: 42px;
+  height: 42px;
+
+  margin-left: auto;
+  margin-bottom: 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #ddd;
+  border-radius: 50%;
+
+  background: #fff;
+
+  cursor: pointer;
+}
+
+/* ===========================
+   INFORMACIÓN DEL PRODUCTO
+=========================== */
+
+.brand {
+  display: block;
+
+  font-size: 17px;
+  font-weight: 600;
+
+  margin-bottom: 8px;
+}
+
+.product-info h1 {
+  font-size: 34px;
+  font-weight: 500;
+  line-height: 1.2;
+
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #666;
+  margin-bottom: 25px;
+}
+
+/* ===========================
+   PRECIO NORMAL
+=========================== */
+
+.price {
+  font-size: 34px;
+  font-weight: 700;
+
+  margin: 0 0 35px;
+}
+
+/* ===========================
+   PRECIO CON OFERTA
+=========================== */
+
+.price-container {
+  margin-bottom: 35px;
+}
+
+.retail-price {
+  display: block;
+
+  margin-bottom: 7px;
+
+  font-size: 16px;
+  font-weight: 400;
+
+  color: #888;
+
+  text-decoration: line-through;
+  text-decoration-thickness: 1px;
+}
+
+.offer-price-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.offer-price {
+  margin: 0;
+
+  font-size: 34px;
+  line-height: 1;
+
+  font-weight: 700;
+
+  color: #111;
+}
+
+.offer-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 6px 9px;
+
+  background: #ff0000;
+  color: #fff;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.8px;
+}
+
+/* ===========================
+   OPCIONES
+=========================== */
+
+.info-group {
+  margin-bottom: 28px;
+}
+
+.info-group label {
+  display: block;
+
+  margin-bottom: 12px;
+
+  font-weight: 600;
+}
+
+/* ===========================
+   AÑADIR AL CARRITO
+=========================== */
+
+.buy-btn {
+  width: 100%;
+  height: 58px;
+
+  border: none;
+
+  background: #111;
+  color: #fff;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+.buy-btn:hover {
+  background: #222;
+}
+
+/* ===========================
+   WHATSAPP
+=========================== */
+
+.whatsapp-btns {
+  width: 100%;
+  height: 64px;
+
+  margin-top: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  background: #fff;
+  color: #111;
+
+  border: 1px solid #d8d8d8;
+  border-radius: 0;
+
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.1px;
+
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+.whatsapp-btns svg {
+  font-size: 21px;
+
+  color: #25d366;
+
+  transition: all 0.25s ease;
+}
+
+.whatsapp-btns:hover {
+  background: #25d366;
+  color: #fff;
+
+  border-color: #25d366;
+}
+
+.whatsapp-btns:hover svg {
+  color: #fff;
+
+  transform: scale(1.08);
+}
+
+.whatsapp-btns:disabled {
+  background: #f7f7f7;
+
+  color: #aaa;
+
+  border-color: #e2e2e2;
+
+  cursor: not-allowed;
+}
+
+.whatsapp-btns:disabled svg {
+  color: #aaa;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width: 1200px) {
+  .product-info {
+    position: static;
+  }
+}

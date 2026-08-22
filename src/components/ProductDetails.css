@@ -1,0 +1,144 @@
+.product-details {
+  max-width: 1500px;
+  margin: 50px auto;
+  padding: 0 40px 80px;
+}
+
+.product-layout {
+  display: grid;
+
+  grid-template-columns: minmax(650px, 850px) 420px;
+
+  justify-content: center;
+
+  gap: 50px;
+
+  align-items: start;
+
+  grid-template-areas:
+    "left info"
+    "extra info";
+}
+
+@media (max-width:1200px){
+
+.product-layout{
+    grid-template-columns:1fr;
+
+    grid-template-areas:
+        "left"
+        "info"
+        "extra";
+
+    gap:40px;
+}
+
+}
+
+@media (max-width:768px){
+
+.product-details{
+  margin:20px auto;
+  padding:0 20px 60px;
+}
+
+.product-layout{
+  gap:0;
+}
+
+}
+
+/* Loading */
+
+/* Product Not Found */
+
+/* ===========================
+   PRODUCTO VOLANDO AL CARRITO
+=========================== */
+
+.flying-product-image {
+  position: fixed;
+
+  left: var(--start-x);
+  top: var(--start-y);
+
+  width: 90px;
+  height: 90px;
+
+  object-fit: contain;
+
+  pointer-events: none;
+
+  z-index: 99999;
+
+  transform: translate(-50%, -50%) scale(1);
+
+  animation: flyToCart 0.75s cubic-bezier(
+    0.22,
+    0.61,
+    0.36,
+    1
+  ) forwards;
+}
+
+@keyframes flyToCart {
+
+  0% {
+    left: var(--start-x);
+    top: var(--start-y);
+
+    opacity: 1;
+
+    transform:
+      translate(-50%, -50%)
+      scale(1)
+      rotate(0deg);
+  }
+
+  25% {
+    opacity: 1;
+
+    transform:
+      translate(-50%, -50%)
+      scale(0.9)
+      rotate(-5deg);
+  }
+
+  55% {
+    left: calc(
+      var(--start-x) +
+      (var(--end-x) - var(--start-x)) * 0.55
+    );
+
+    top: calc(
+      var(--start-y) +
+      (var(--end-y) - var(--start-y)) * 0.55 - 80px
+    );
+
+    transform:
+      translate(-50%, -50%)
+      scale(0.65)
+      rotate(8deg);
+  }
+
+  80% {
+    opacity: 0.8;
+
+    transform:
+      translate(-50%, -50%)
+      scale(0.45)
+      rotate(-5deg);
+  }
+
+  100% {
+    left: var(--end-x);
+    top: var(--end-y);
+
+    opacity: 0;
+
+    transform:
+      translate(-50%, -50%)
+      scale(0.15)
+      rotate(0deg);
+  }
+}

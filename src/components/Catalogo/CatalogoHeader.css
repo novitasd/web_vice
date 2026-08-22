@@ -1,0 +1,313 @@
+/* ==================================
+        CATALOGO HEADER
+================================== */
+
+.catalogo-header {
+    position: relative;
+
+    width: 100%;
+    max-width: 1420px;
+
+    margin: 0 auto;
+
+    padding: 70px 24px 45px;
+
+    color: #111;
+
+    overflow: hidden;
+}
+
+
+/* ==================================
+        CONTENT
+================================== */
+
+.catalogo-header-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 760px;
+}
+
+
+/* ==================================
+        EYEBROW
+================================== */
+
+.catalogo-eyebrow {
+    display: block;
+
+    margin-bottom: 18px;
+
+    font-size: 0.65rem;
+    font-weight: 800;
+
+    letter-spacing: 2.5px;
+
+    color: #777;
+
+    text-transform: uppercase;
+}
+
+
+/* ==================================
+        TITLE
+================================== */
+
+.catalogo-header h1 {
+    margin: 0;
+
+    font-size: clamp(3.5rem, 7vw, 7rem);
+    font-weight: 900;
+
+    line-height: 0.82;
+
+    letter-spacing: -0.07em;
+
+    color: #111;
+
+    text-transform: uppercase;
+}
+
+
+/* ==================================
+        DESCRIPTION
+================================== */
+
+.catalogo-header p {
+    margin-top: 24px;
+
+    max-width: 440px;
+
+    font-size: 0.9rem;
+    font-weight: 400;
+
+    line-height: 1.6;
+
+    color: #666;
+}
+
+
+/* ==================================
+        COLLECTION NUMBER
+================================== */
+
+.catalogo-quality-badge {
+    position: absolute;
+
+    right: 24px;
+    bottom: 45px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-end;
+
+    pointer-events: none;
+}
+
+
+/* Ocultamos el span LEVEL */
+
+.catalogo-quality-badge span {
+    display: none;
+}
+
+
+/* Número */
+
+.catalogo-quality-badge strong {
+    font-size: clamp(4rem, 9vw, 9rem);
+    font-weight: 900;
+
+    line-height: 0.75;
+
+    letter-spacing: -0.08em;
+
+    color: #d4d4d0;
+}
+
+
+/* /// */
+
+.catalogo-quality-badge small {
+    margin-top: 14px;
+
+    font-size: 0.6rem;
+    font-weight: 800;
+
+    letter-spacing: 5px;
+
+    color: #999;
+}
+
+
+/* ==================================
+        DIVIDER
+================================== */
+
+.catalogo-header::after {
+    content: "";
+
+    position: absolute;
+
+    left: 24px;
+    right: 24px;
+
+    bottom: 0;
+
+    height: 1px;
+
+    background: #d6d6d2;
+}
+
+
+/* ==================================
+        G5
+================================== */
+
+.catalogo-g5 h1 {
+    color: #111;
+}
+
+.catalogo-g5 .catalogo-eyebrow {
+    color: #9b7a31;
+}
+
+
+/* ==================================
+        IMPORTADA
+================================== */
+
+.catalogo-importada h1 {
+    color: #111;
+}
+
+.catalogo-importada .catalogo-eyebrow {
+    color: #667d98;
+}
+
+
+/* ==================================
+        PREMIUM
+================================== */
+
+.catalogo-premium h1 {
+    color: #111;
+}
+
+.catalogo-premium .catalogo-eyebrow {
+    color: #777;
+}
+
+
+/* ==================================
+        CATALOGO GENERAL
+================================== */
+
+.catalogo-all h1 {
+    color: #111;
+}
+
+
+/* ==================================
+        TABLET
+================================== */
+
+@media (max-width: 992px) {
+
+    .catalogo-header {
+        padding: 60px 20px 40px;
+    }
+
+    .catalogo-quality-badge {
+        right: 20px;
+        bottom: 40px;
+    }
+
+    .catalogo-header::after {
+        left: 20px;
+        right: 20px;
+    }
+
+}
+
+
+/* ==================================
+        MOBILE
+================================== */
+
+@media (max-width: 768px) {
+
+    .catalogo-header {
+        padding: 50px 20px 35px;
+    }
+
+    .catalogo-header h1 {
+        font-size: clamp(3.3rem, 16vw, 5rem);
+
+        letter-spacing: -0.06em;
+    }
+
+    .catalogo-header p {
+        max-width: 260px;
+
+        font-size: 0.82rem;
+    }
+
+    .catalogo-quality-badge {
+        right: 20px;
+        bottom: 35px;
+    }
+
+    .catalogo-quality-badge strong {
+        font-size: 6rem;
+    }
+
+    .catalogo-header::after {
+        left: 20px;
+        right: 20px;
+    }
+
+}
+
+
+/* ==================================
+        SMALL MOBILE
+================================== */
+
+@media (max-width: 480px) {
+
+    .catalogo-header {
+        padding: 45px 16px 30px;
+    }
+
+    .catalogo-eyebrow {
+        font-size: 0.58rem;
+
+        letter-spacing: 2px;
+    }
+
+    .catalogo-header h1 {
+        font-size: 3.5rem;
+    }
+
+    .catalogo-header p {
+        margin-top: 18px;
+
+        font-size: 0.78rem;
+    }
+
+    .catalogo-quality-badge {
+        right: 16px;
+        bottom: 30px;
+
+        opacity: 0.8;
+    }
+
+    .catalogo-quality-badge strong {
+        font-size: 4.5rem;
+    }
+
+}
