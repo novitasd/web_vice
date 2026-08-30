@@ -4,7 +4,6 @@ import { getProducts } from "../../services/product.service";
 import "./ProductRelated.css";
 
 export default function ProductRelated({ product }) {
-
   const sliderRef = useRef(null);
 
   const [productos, setProductos] = useState([]);
@@ -15,13 +14,10 @@ export default function ProductRelated({ product }) {
   // ==========================================
 
   useEffect(() => {
-
     if (!product) return;
 
     async function cargarRelacionados() {
-
       try {
-
         setLoading(true);
 
         const response = await getProducts();
@@ -36,8 +32,9 @@ export default function ProductRelated({ product }) {
             p.brand?.id === product.brand?.id
         );
 
+        // Si hay pocos productos de la misma marca,
+        // completar con productos de la misma categoría
         if (relacionados.length < 8) {
-
           const categoria = todos.filter(
             (p) =>
               p.id !== product.id &&
@@ -51,24 +48,19 @@ export default function ProductRelated({ product }) {
             ...relacionados,
             ...categoria,
           ];
-
         }
 
         setProductos(relacionados.slice(0, 8));
 
       } catch (error) {
-
         console.error(
           "Error cargando productos relacionados:",
           error
         );
 
       } finally {
-
         setLoading(false);
-
       }
-
     }
 
     cargarRelacionados();
@@ -80,7 +72,6 @@ export default function ProductRelated({ product }) {
   // ==========================================
 
   const moverSlider = (direccion) => {
-
     const slider = sliderRef.current;
 
     if (!slider) return;
@@ -90,7 +81,6 @@ export default function ProductRelated({ product }) {
     if (!card) return;
 
     const gap = 24;
-
     const distancia = card.offsetWidth + gap;
 
     slider.scrollBy({
@@ -100,7 +90,6 @@ export default function ProductRelated({ product }) {
           : -distancia,
       behavior: "smooth",
     });
-
   };
 
   // ==========================================
@@ -108,7 +97,6 @@ export default function ProductRelated({ product }) {
   // ==========================================
 
   const Header = () => (
-
     <div className="relatedHeader">
 
       <div className="relatedTitle">
@@ -122,18 +110,19 @@ export default function ProductRelated({ product }) {
         </h2>
 
         <p className="relatedDescription">
-          Descubre más modelos {product?.brand?.name} que podrían gustarte.
+          Descubre más modelos de {product?.brand?.name}
+          que podrían gustarte.
         </p>
 
       </div>
 
-      {!loading && (
-
+      {!loading && productos.length > 0 && (
         <div className="relatedButtons">
 
           <button
             type="button"
             onClick={() => moverSlider("anterior")}
+            aria-label="Productos anteriores"
           >
             ←
           </button>
@@ -141,16 +130,15 @@ export default function ProductRelated({ product }) {
           <button
             type="button"
             onClick={() => moverSlider("siguiente")}
+            aria-label="Siguientes productos"
           >
             →
           </button>
 
         </div>
-
       )}
 
     </div>
-
   );
 
   // ==========================================
@@ -158,21 +146,13 @@ export default function ProductRelated({ product }) {
   // ==========================================
 
   if (loading) {
-
     return (
-
       <section className="relatedSection">
-
         <div className="relatedContainer">
-
           <Header />
-
         </div>
-
       </section>
-
     );
-
   }
 
   // ==========================================
@@ -180,9 +160,7 @@ export default function ProductRelated({ product }) {
   // ==========================================
 
   if (productos.length === 0) {
-
     return null;
-
   }
 
   // ==========================================
@@ -190,7 +168,6 @@ export default function ProductRelated({ product }) {
   // ==========================================
 
   return (
-
     <section className="relatedSection">
 
       <div className="relatedContainer">
@@ -204,19 +181,28 @@ export default function ProductRelated({ product }) {
 
           {productos.map((producto) => {
 
+            // Misma lógica de oferta que ProductCard
+            const hasOffer =
+              Number(producto.offerPrice) > 0 &&
+              Number(producto.offerPrice) <
+              Number(producto.price);
+
+            // Buscar imagen principal primero
             const imagen =
-              producto.images?.length > 0
-                ? producto.images[0].url
-                : "/no-image.png";
+              producto.images?.find(
+                (img) => img.isPrimary
+              )?.url ||
+              producto.images?.[0]?.url ||
+              "/no-image.png";
 
             return (
-
               <Link
                 key={producto.id}
                 to={`/producto/${producto.slug}`}
                 className="relatedCard"
               >
 
+                {/* IMAGEN */}
                 <div className="relatedImage">
 
                   <img
@@ -227,34 +213,51 @@ export default function ProductRelated({ product }) {
 
                 </div>
 
+                {/* INFORMACIÓN */}
                 <div className="relatedInfo">
 
-                  <div>
+                  <span className="relatedLabel">
+                    {producto.brand?.name}
+                  </span>
 
-                    <span className="relatedLabel">
-                      {producto.brand?.name}
-                    </span>
+                  <h3>
+                    {producto.name}
+                  </h3>
 
-                    <h3>
-                      {producto.name}
-                    </h3>
+                  {/* FOOTER IGUAL AL CATÁLOGO */}
+                  <div className="relatedFooter">
 
-                    <span className="relatedPrice">
-                      S/. {producto.offerPrice || producto.price}
-                    </span>
+                    <p className="relatedDescriptionCard">
+                      {producto.category?.name}
+                    </p>
+
+                    {/* PRECIO */}
+                    <div className="relatedPriceContainer">
+
+                      {hasOffer ? (
+                        <>
+                          <span className="relatedOldPrice">
+                            S/. {producto.price}
+                          </span>
+
+                          <strong className="relatedOfferPrice">
+                            S/. {producto.offerPrice}
+                          </strong>
+                        </>
+                      ) : (
+                        <strong className="relatedNormalPrice">
+                          S/. {producto.price}
+                        </strong>
+                      )}
+
+                    </div>
 
                   </div>
-
-                  <span className="relatedArrow">
-                    →
-                  </span>
 
                 </div>
 
               </Link>
-
             );
-
           })}
 
         </div>
@@ -262,7 +265,5 @@ export default function ProductRelated({ product }) {
       </div>
 
     </section>
-
   );
-
 }

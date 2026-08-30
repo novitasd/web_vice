@@ -7,7 +7,6 @@ import {
 } from "react-router-dom";
 
 import ProductGrid from "../components/Catalogo/ProductGrid";
-import CatalogoHeader from "../components/Catalogo/CatalogoHeader";
 import BrandTabs from "../components/Product/BrandTabs/BrandTabs";
 
 import { getProducts } from "../services/product.service";
@@ -30,39 +29,7 @@ function Catalogo() {
     const [loading, setLoading] = useState(true);
 
 
-    // ==========================
-    // INFORMACIÓN DEL CATÁLOGO
-    // ==========================
 
-    const catalogInfo = {
-        g5: {
-            titulo: "G5",
-            descripcion:
-                "Máximo nivel de detalle, materiales y acabados.",
-        },
-
-        importada: {
-            titulo: "IMPORTADA",
-            descripcion:
-                "Modelos seleccionados con materiales y acabados de alta calidad.",
-        },
-
-        premium: {
-            titulo: "PREMIUM",
-            descripcion:
-                "Nuestra selección esencial para elevar tu estilo urbano.",
-        },
-
-        all: {
-            titulo: "CATÁLOGO",
-            descripcion:
-                "Explora todos nuestros productos.",
-        },
-    };
-
-
-    const currentCatalog =
-        catalogInfo[calidad] || catalogInfo.all;
 
 
     // ==========================
@@ -256,12 +223,6 @@ function Catalogo() {
     return (
 
         <section className="catalogo">
-
-            <CatalogoHeader
-                titulo={currentCatalog.titulo}
-                descripcion={currentCatalog.descripcion}
-                calidad={calidad || "all"}
-            />
 
 
             <BrandTabs

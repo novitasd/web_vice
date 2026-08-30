@@ -1,7 +1,12 @@
 import { Link } from "react-router-dom";
-import "./ProductCard.css"
+import "./ProductCard.css";
 
 function ProductCard({ producto }) {
+
+  const hasOffer =
+    Number(producto.offerPrice) > 0 &&
+    Number(producto.offerPrice) < Number(producto.price);
+
   return (
     <Link
       to={`/producto/${producto.slug}`}
@@ -24,25 +29,47 @@ function ProductCard({ producto }) {
           />
         </div>
 
-        {/* MARCA */}
-        <span className="etiqueta">
-          {producto.brand?.name}
-        </span>
+        {/* INFORMACIÓN */}
+        <div className="producto-info">
 
-        {/* NOMBRE */}
-        <h3>
-          {producto.name}
-        </h3>
+          <span className="etiqueta">
+            {producto.brand?.name}
+          </span>
 
-        {/* CATEGORÍA */}
-        <p className="descripcion">
-          {producto.category?.name}
-        </p>
+          <h3>
+            {producto.name}
+          </h3>
 
-        {/* PRECIO */}
-        <strong>
-          S/. {producto.price}
-        </strong>
+          <div className="producto-footer">
+
+            <p className="descripcion">
+              {producto.category?.name}
+            </p>
+
+            {/* PRECIO */}
+            <div className="producto-precio">
+
+              {hasOffer ? (
+                <>
+                  <span className="precio-anterior">
+                    S/. {producto.price}
+                  </span>
+
+                  <strong className="precio-oferta">
+                    S/. {producto.offerPrice}
+                  </strong>
+                </>
+              ) : (
+                <strong className="precio-normal">
+                  S/. {producto.price}
+                </strong>
+              )}
+
+            </div>
+
+          </div>
+
+        </div>
 
       </article>
     </Link>

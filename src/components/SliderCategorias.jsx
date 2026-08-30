@@ -4,23 +4,18 @@ import { getProducts } from "../services/product.service";
 import "./SliderCategorias.css";
 
 export default function SliderCategorias() {
-
   const sliderRef = useRef(null);
 
   const [productos, setProductos] = useState([]);
   const [loading, setLoading] = useState(true);
-
 
   // ==========================================
   // CARGAR PRODUCTOS DESTACADOS
   // ==========================================
 
   useEffect(() => {
-
     async function cargarDestacados() {
-
       try {
-
         setLoading(true);
 
         const response = await getProducts();
@@ -32,47 +27,35 @@ export default function SliderCategorias() {
         );
 
         setProductos(destacados);
-
       } catch (error) {
-
         console.error(
           "Error cargando productos destacados:",
           error
         );
-
       } finally {
-
         setLoading(false);
-
       }
-
     }
 
     cargarDestacados();
-
   }, []);
-
 
   // ==========================================
   // MOVER SLIDER
   // ==========================================
 
   const moverSlider = (direccion) => {
-
     const slider = sliderRef.current;
 
     if (!slider) return;
 
-    const card = slider.querySelector(
-      ".destacadoCard"
-    );
+    const card = slider.querySelector(".destacadoCard");
 
     if (!card) return;
 
     const gap = 24;
 
-    const distancia =
-      card.offsetWidth + gap;
+    const distancia = card.offsetWidth + gap;
 
     slider.scrollBy({
       left:
@@ -82,25 +65,18 @@ export default function SliderCategorias() {
 
       behavior: "smooth",
     });
-
   };
-
 
   // ==========================================
   // LOADING
   // ==========================================
 
   if (loading) {
-
     return (
       <section className="sliderCategorias">
-
         <div className="sliderCategoriasContainer">
-
           <div className="sliderHeader">
-
             <div className="sliderTitulo">
-
               <span className="sliderEyebrow">
                 SELECCIÓN
               </span>
@@ -108,40 +84,31 @@ export default function SliderCategorias() {
               <h2>
                 Productos destacados
               </h2>
-
             </div>
-
           </div>
-
         </div>
-
       </section>
     );
-
   }
-
 
   // ==========================================
   // NO HAY DESTACADOS
   // ==========================================
 
   if (productos.length === 0) {
-
     return null;
-
   }
 
+  // ==========================================
+  // COMPONENTE
+  // ==========================================
 
   return (
-
     <section className="sliderCategorias">
 
       <div className="sliderCategoriasContainer">
 
-
-        {/* ===================================
-            HEADER
-        =================================== */}
+        {/* HEADER */}
 
         <div className="sliderHeader">
 
@@ -157,25 +124,19 @@ export default function SliderCategorias() {
 
           </div>
 
-
           <div className="botones">
 
             <button
               type="button"
-              onClick={() =>
-                moverSlider("anterior")
-              }
+              onClick={() => moverSlider("anterior")}
               aria-label="Producto anterior"
             >
               ←
             </button>
 
-
             <button
               type="button"
-              onClick={() =>
-                moverSlider("siguiente")
-              }
+              onClick={() => moverSlider("siguiente")}
               aria-label="Producto siguiente"
             >
               →
@@ -185,10 +146,7 @@ export default function SliderCategorias() {
 
         </div>
 
-
-        {/* ===================================
-            PRODUCTOS
-        =================================== */}
+        {/* PRODUCTOS */}
 
         <div
           className="slider"
@@ -197,20 +155,25 @@ export default function SliderCategorias() {
 
           {productos.map((producto) => {
 
-            const imagen =
-              producto.images?.length > 0
-                ? producto.images[0].url
-                : "/no-image.png";
+            // LÓGICA DE OFERTA
+            const hasOffer =
+              Number(producto.offerPrice) > 0 &&
+              Number(producto.offerPrice) < Number(producto.price);
 
+            // IMAGEN PRINCIPAL
+            const imagen =
+              producto.images?.find(
+                (img) => img.isPrimary
+              )?.url ||
+              producto.images?.[0]?.url ||
+              "/no-image.png";
 
             return (
-
               <Link
                 key={producto.id}
                 to={`/producto/${producto.slug}`}
                 className="destacadoCard"
               >
-
 
                 {/* IMAGEN */}
 
@@ -224,46 +187,54 @@ export default function SliderCategorias() {
 
                 </div>
 
-
                 {/* INFORMACIÓN */}
 
                 <div className="categoriaInfo">
 
-                  <div>
+                  <span className="categoriaLabel">
+                    {producto.brand?.name}
+                  </span>
 
-                    <span className="categoriaLabel">
+                  <h3>
+                    {producto.name}
+                  </h3>
 
-                      {producto.brand?.name}
+                  {/* FOOTER COMO PRODUCT CARD */}
 
-                    </span>
+                  <div className="destacadoFooter">
 
+                    <p className="destacadoDescripcion">
+                      {producto.category?.name}
+                    </p>
 
-                    <h3>
+                    <div className="destacadoPrecio">
 
-                      {producto.name}
+                      {hasOffer ? (
+                        <>
 
-                    </h3>
+                          <span className="destacadoPrecioAnterior">
+                            S/. {producto.price}
+                          </span>
 
+                          <strong className="destacadoPrecioOferta">
+                            S/. {producto.offerPrice}
+                          </strong>
 
-                    <span className="destacadoPrecio">
+                        </>
+                      ) : (
+                        <strong className="destacadoPrecioNormal">
+                          S/. {producto.price}
+                        </strong>
+                      )}
 
-                      S/. {producto.offerPrice || producto.price}
-
-                    </span>
+                    </div>
 
                   </div>
-
-
-                  <span className="categoriaArrow">
-                    →
-                  </span>
 
                 </div>
 
               </Link>
-
             );
-
           })}
 
         </div>
@@ -271,7 +242,5 @@ export default function SliderCategorias() {
       </div>
 
     </section>
-
   );
-
 }

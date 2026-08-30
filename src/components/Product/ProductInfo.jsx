@@ -17,16 +17,17 @@ function ProductInfo({
 }) {
   const WHATSAPP_NUMBER = "51902824286";
 
-  // Verificar si el producto tiene una oferta válida
-  const hasOffer =
-    product.offerPrice &&
-    Number(product.offerPrice) < Number(product.price);
+// Verificar si el producto tiene una oferta válida
+const hasOffer =
+  Number(product.offerPrice) > 0 &&
+  Number(product.offerPrice) < Number(product.price);
 
-  // Precio que realmente pagará el cliente
-  const currentPrice = hasOffer
-    ? product.offerPrice
-    : product.price;
+// Precio que realmente pagará el cliente
+const currentPrice = hasOffer
+  ? Number(product.offerPrice)
+  : Number(product.price);
 
+  
   const handleWhatsApp = () => {
     if (!selectedSize || availableStock <= 0) return;
 

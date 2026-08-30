@@ -14,6 +14,8 @@
   flex-shrink: 0;
 }
 
+/* BOTONES E ICONOS */
+
 .nav-icons button {
   width: 42px;
   height: 42px;
@@ -25,15 +27,30 @@
   border: none;
   background: transparent;
 
+  color: #fff;
+
   font-size: 20px;
 
   cursor: pointer;
 
-  transition: 0.3s;
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
 }
 
+/* FORZAR SVG BLANCO */
+
+.nav-icons button svg,
+.nav-icons svg {
+  color: #fff;
+  stroke: currentColor;
+}
+
+/* HOVER */
+
 .nav-icons button:hover {
-  background: #e6e6e6;
+  background: rgba(255, 255, 255, 0.08);
+
   transform: translateY(-2px);
 }
 
@@ -48,12 +65,26 @@
   justify-content: center;
   align-items: center;
 
-  color: inherit;
+  color: #fff;
   text-decoration: none;
 
   font-size: 1.3rem;
 
   transform-origin: center;
+}
+
+/* ICONO DEL CARRITO BLANCO */
+
+.cart-button svg {
+  color: #fff;
+  stroke: currentColor;
+}
+
+/* HOVER DEL CARRITO */
+
+.cart-button:hover {
+  color: #fff;
+  transform: translateY(-2px);
 }
 
 /* REBOTE DEL CARRITO */
@@ -105,11 +136,11 @@
 
   border-radius: 50%;
 
-  background: #111;
-  color: #fff;
+  background: #fff;
+  color: #151515;
 
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 700;
 
   transition: transform 0.25s ease;
 }
@@ -154,6 +185,8 @@
     justify-self: end;
 
     font-size: 1.35rem;
+
+    color: #fff;
   }
 
   .nav-icons .mobile-search-btn {
@@ -166,10 +199,21 @@
     height: 42px;
 
     border: none;
-    background: none;
+    background: transparent;
+
+    color: #fff;
 
     font-size: 22px;
 
     cursor: pointer;
+  }
+
+  .nav-icons .mobile-search-btn svg {
+    color: #fff;
+    stroke: currentColor;
+  }
+
+  .nav-icons .mobile-search-btn:hover {
+    background: rgba(255, 255, 255, 0.08);
   }
 }

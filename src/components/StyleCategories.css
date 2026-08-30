@@ -1,472 +1,433 @@
-/*==================================
+/* ==================================
         STYLE CATEGORIES
-===================================*/
+================================== */
 
 .style-categories {
     padding: 100px 7%;
     background: #fff;
-    overflow: hidden;
+    color: #151515;
 }
 
 
-/*==================================
+/* ==================================
             HEADER
-===================================*/
+================================== */
 
 .style-header {
-    margin-bottom: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    gap: 40px;
+
+    margin-bottom: 45px;
+}
+
+.style-header > div {
+    flex: 1;
 }
 
 .style-header span {
     display: block;
-    margin-bottom: 14px;
 
-    font-size: 0.75rem;
+    margin-bottom: 12px;
+
+    font-size: 0.68rem;
     font-weight: 800;
-    letter-spacing: 5px;
+
+    letter-spacing: 4px;
 
     color: #777;
+
     text-transform: uppercase;
 }
 
 .style-header h2 {
     margin: 0;
 
-    font-size: clamp(2.8rem, 5vw, 5.5rem);
+    font-size: clamp(2.4rem, 4vw, 4.5rem);
     font-weight: 950;
 
-    line-height: 0.9;
-    letter-spacing: -3px;
+    line-height: 0.95;
 
-    color: #111;
+    letter-spacing: -2px;
+
+    color: #151515;
+
     text-transform: uppercase;
 }
 
+.style-header > p {
+    width: 340px;
 
-/*==================================
+    margin: 0;
+
+    font-size: 0.95rem;
+    line-height: 1.7;
+
+    color: #777;
+}
+
+
+/* ==================================
         CATEGORIES CONTAINER
-===================================*/
+================================== */
 
 .style-slider {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 
-    gap: 45px;
-    align-items: start;
+    gap: 16px;
 }
 
 
-/*==================================
+/* ==================================
             CARD
-===================================*/
+================================== */
 
 .style-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    text-decoration: none;
-    cursor: pointer;
-
-    color: #111;
-}
-
-
-/*==================================
-        URBAN CIRCLE
-===================================*/
-
-.style-image {
     position: relative;
 
-    width: min(24vw, 290px);
-    aspect-ratio: 1;
+    min-height: 360px;
 
-    border-radius: 50%;
+    padding: 30px;
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
 
     overflow: hidden;
+
+    text-decoration: none;
+
+    border: 1px solid #dedede;
+
+    color: #151515;
+
+    background: #f7f7f7;
 
     transition:
         transform 0.35s ease,
         background 0.35s ease,
+        border-color 0.35s ease,
         box-shadow 0.35s ease;
 }
 
 
-/*==================================
-        CATEGORY NAME
-===================================*/
+/* ==================================
+            TOP
+================================== */
 
-.style-image strong {
-    position: relative;
-    z-index: 2;
+.style-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
 
-    max-width: 90%;
+.style-number {
+    font-size: 0.72rem;
+    font-weight: 800;
 
-    font-size: clamp(2rem, 3vw, 4rem);
-    font-weight: 950;
+    letter-spacing: 2px;
 
-    line-height: 0.85;
-    letter-spacing: -3px;
+    color: #777;
+}
 
-    text-align: center;
-    text-transform: uppercase;
-
-    color: #111;
+.style-arrow {
+    font-size: 1.6rem;
+    line-height: 1;
 
     transition:
-        color 0.35s ease,
         transform 0.35s ease;
 }
 
 
-/*==================================
-            URBAN ///
-===================================*/
+/* ==================================
+            CONTENT
+================================== */
 
-.style-lines {
-    position: relative;
-    z-index: 2;
-
-    margin-top: 12px;
-
-    font-size: 1.1rem;
-    font-weight: 950;
-    letter-spacing: 6px;
-
-    color: rgba(0, 0, 0, 0.45);
-
-    transform: skewX(-15deg);
-
-    transition:
-        color 0.35s ease,
-        transform 0.35s ease;
+.style-card-content {
+    margin-top: auto;
 }
 
+.style-tag {
+    display: block;
 
-/*==================================
-        DECORATIVE LINE
-===================================*/
+    margin-bottom: 14px;
 
-.style-image::before {
-    content: "";
-
-    position: absolute;
-
-    width: 140%;
-    height: 2px;
-
-    background: rgba(0, 0, 0, 0.12);
-
-    transform: rotate(-25deg);
-
-    transition: 0.35s ease;
-}
-
-
-/*==================================
-            TAG
-===================================*/
-
-.style-card p {
-    margin: 24px 0 0;
-
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     font-weight: 800;
 
     letter-spacing: 3px;
 
     color: #777;
+}
 
-    text-align: center;
+.style-card h3 {
+    margin: 0 0 16px;
+
+    font-size: clamp(2.2rem, 3vw, 3.7rem);
+    font-weight: 950;
+
+    line-height: 0.9;
+
+    letter-spacing: -2px;
+
     text-transform: uppercase;
+}
+
+.style-card-content p {
+    max-width: 290px;
+
+    margin: 0;
+
+    font-size: 0.9rem;
+
+    line-height: 1.6;
+
+    color: #777;
+}
+
+
+/* ==================================
+            EXPLORE
+================================== */
+
+.style-explore {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 35px;
+
+    font-size: 0.68rem;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+.style-line {
+    flex: 1;
+
+    height: 1px;
+
+    background: #cfcfcf;
 
     transition:
-        color 0.3s ease,
-        letter-spacing 0.3s ease;
+        background 0.35s ease;
+}
+
+.style-arrow-right {
+    font-size: 1.1rem;
+
+    transition:
+        transform 0.35s ease;
 }
 
 
-/*==================================
-        G5 — MÁXIMA CALIDAD
-===================================*/
+/* ==================================
+              G5
+================================== */
 
-.style-card.g5 .style-image {
-    background: linear-gradient(
-        135deg,
-        #f0d58a,
-        #c99a32
-    );
-}
+.style-card.g5 {
+    background: #151515;
 
-.style-card.g5 .style-image strong {
-    color: #111;
-}
+    border-color: #151515;
 
-.style-card.g5 .style-card p {
-    color: #8a6418;
-}
-
-
-/* HOVER G5 */
-
-.style-card.g5:hover .style-image {
-    background: #111;
-
-    transform:
-        translateY(-10px)
-        rotate(-3deg);
-
-    box-shadow:
-        0 25px 50px rgba(201, 154, 50, 0.35);
-}
-
-.style-card.g5:hover .style-image strong {
-    color: #f0d58a;
-    transform: scale(1.06);
-}
-
-.style-card.g5:hover .style-lines {
-    color: #f0d58a;
-}
-
-.style-card.g5:hover .style-image::before {
-    background: rgba(240, 213, 138, 0.3);
-}
-
-.style-card.g5:hover p {
-    color: #8a6418;
-    letter-spacing: 4px;
-}
-
-
-/*==================================
-        IMPORTADA — NIVEL MEDIO
-===================================*/
-
-.style-card.importada .style-image {
-    background: linear-gradient(
-        135deg,
-        #b9d8ff,
-        #4d8fe3
-    );
-}
-
-.style-card.importada .style-image strong {
-    color: #0c1b30;
-}
-
-
-/* HOVER IMPORTADA */
-
-.style-card.importada:hover .style-image {
-    background: #111;
-
-    transform:
-        translateY(-10px)
-        rotate(-3deg);
-
-    box-shadow:
-        0 25px 50px rgba(37, 99, 235, 0.3);
-}
-
-.style-card.importada:hover .style-image strong {
-    color: #7db5ff;
-    transform: scale(1.06);
-}
-
-.style-card.importada:hover .style-lines {
-    color: #7db5ff;
-}
-
-.style-card.importada:hover .style-image::before {
-    background: rgba(125, 181, 255, 0.3);
-}
-
-.style-card.importada:hover p {
-    color: #2563eb;
-    letter-spacing: 4px;
-}
-
-
-/*==================================
-        PREMIUM — NIVEL BASE
-===================================*/
-
-.style-card.premium .style-image {
-    background: linear-gradient(
-        135deg,
-        #f0f0f0,
-        #a9a9a9
-    );
-}
-
-.style-card.premium .style-image strong {
-    color: #111;
-}
-
-
-/* HOVER PREMIUM */
-
-.style-card.premium:hover .style-image {
-    background: #111;
-
-    transform:
-        translateY(-10px)
-        rotate(-3deg);
-
-    box-shadow:
-        0 25px 50px rgba(0, 0, 0, 0.2);
-}
-
-.style-card.premium:hover .style-image strong {
     color: #fff;
-    transform: scale(1.06);
 }
 
-.style-card.premium:hover .style-lines {
-    color: #bbb;
+.style-card.g5 .style-number,
+.style-card.g5 .style-tag {
+    color: #d1281f;
 }
 
-.style-card.premium:hover .style-image::before {
-    background: rgba(255, 255, 255, 0.15);
+.style-card.g5 .style-card-content p {
+    color: #aaa;
 }
 
-.style-card.premium:hover p {
-    color: #111;
-    letter-spacing: 4px;
+.style-card.g5 .style-line {
+    background: #3a3a3a;
 }
 
 
-/*==================================
-        TABLET
-===================================*/
+/* ==================================
+          IMPORTADA
+================================== */
+
+.style-card.importada {
+    background: #f2f2f2;
+}
+
+
+/* ==================================
+           PREMIUM
+================================== */
+
+.style-card.premium {
+    background: #fff;
+}
+
+
+/* ==================================
+            HOVER
+================================== */
+
+.style-card:hover {
+    transform: translateY(-8px);
+
+    border-color: #151515;
+
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.style-card:hover .style-arrow {
+    transform:
+        translate(4px, -4px);
+}
+
+.style-card:hover .style-arrow-right {
+    transform:
+        translateX(6px);
+}
+
+
+/* G5 HOVER */
+
+.style-card.g5:hover {
+    background: #1e1e1e;
+
+    border-color: #d1281f;
+
+    box-shadow:
+        0 20px 50px rgba(209, 40, 31, 0.12);
+}
+
+.style-card.g5:hover .style-line {
+    background: #d1281f;
+}
+
+
+/* IMPORTADA HOVER */
+
+.style-card.importada:hover {
+    background: #fff;
+}
+
+
+/* PREMIUM HOVER */
+
+.style-card.premium:hover {
+    background: #f5f5f5;
+}
+
+
+/* ==================================
+            TABLET
+================================== */
 
 @media (max-width: 992px) {
 
     .style-categories {
-        padding: 85px 6%;
+        padding: 80px 6%;
     }
 
-    .style-slider {
-        gap: 25px;
+    .style-header > p {
+        width: 280px;
     }
 
-    .style-image {
-        width: min(27vw, 240px);
-    }
+    .style-card {
+        min-height: 330px;
 
-    .style-image strong {
-        letter-spacing: -2px;
+        padding: 25px;
     }
 
 }
 
 
-/*==================================
+/* ==================================
             MOBILE
-===================================*/
+================================== */
 
 @media (max-width: 768px) {
 
     .style-categories {
-        padding: 75px 20px;
+        padding: 70px 20px;
     }
 
     .style-header {
-        margin-bottom: 50px;
-    }
+        display: block;
 
-    .style-header span {
-        font-size: 0.65rem;
-        letter-spacing: 4px;
+        margin-bottom: 35px;
     }
 
     .style-header h2 {
-        font-size: clamp(2.5rem, 11vw, 4rem);
-        letter-spacing: -2px;
+        font-size: 2.8rem;
+    }
+
+    .style-header > p {
+        width: 100%;
+
+        margin-top: 20px;
+
+        font-size: 0.9rem;
     }
 
     .style-slider {
         grid-template-columns: 1fr;
-        gap: 28px;
+
+        gap: 12px;
     }
 
     .style-card {
-        flex-direction: row;
-        justify-content: flex-start;
-        gap: 25px;
+        min-height: 280px;
+
+        padding: 24px;
     }
 
-    .style-image {
-        width: 125px;
-        flex-shrink: 0;
-    }
-
-    .style-image strong {
-        font-size: 1.5rem;
-        letter-spacing: -1.5px;
-    }
-
-    .style-lines {
-        margin-top: 6px;
-
-        font-size: 0.8rem;
-        letter-spacing: 4px;
-    }
-
-    .style-card p {
-        margin: 0;
-
-        font-size: 0.65rem;
-
-        text-align: left;
-        line-height: 1.6;
-    }
-
-    .style-card:hover .style-image {
-        transform:
-            translateY(-5px)
-            rotate(-2deg);
+    .style-card h3 {
+        font-size: 3rem;
     }
 
 }
 
 
-/*==================================
-        SMALL MOBILE
-===================================*/
+/* ==================================
+          SMALL MOBILE
+================================== */
 
 @media (max-width: 480px) {
 
     .style-categories {
-        padding: 65px 18px;
+        padding: 60px 18px;
+    }
+
+    .style-header span {
+        font-size: 0.58rem;
+
+        letter-spacing: 3px;
     }
 
     .style-header h2 {
-        font-size: 2.4rem;
+        font-size: 2.35rem;
+
+        letter-spacing: -1.5px;
     }
 
     .style-card {
-        gap: 18px;
+        min-height: 250px;
     }
 
-    .style-image {
-        width: 105px;
+    .style-card h3 {
+        font-size: 2.5rem;
     }
 
-    .style-image strong {
-        font-size: 1.2rem;
-    }
-
-    .style-card p {
-        font-size: 0.58rem;
-        letter-spacing: 2px;
+    .style-card-content p {
+        font-size: 0.82rem;
     }
 
 }

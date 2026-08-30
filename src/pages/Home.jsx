@@ -16,13 +16,12 @@ function Home() {
   return (
     <>
       <main>
-        <div className="fondo">
-
+        <section className="fondo">
           <div className="hero-media">
 
             <img
               src={heroPoster}
-              alt="Hero"
+              alt="TIOURBAN"
               className={`hero-poster ${videoReady ? "hide" : ""}`}
             />
 
@@ -45,6 +44,7 @@ function Home() {
               />
             </video>
 
+            <div className="hero-overlay"></div>
           </div>
 
           <div className="titulo">
@@ -53,14 +53,19 @@ function Home() {
               @TIOURBAN
             </span>
 
+            <div className="urbanStore">
+              URBAN STORE
+            </div>
+
             <h1>
-              ELEVA TU <br />
-              ESTILO
-            </h1>
+  <span>EL FLOW</span>
+  <span>EMPIEZA</span>
+  <span>POR LOS PIES</span>
+</h1>
 
             <p>
-              Las mejores zapatillas  con acabados premium,
-              envíos a todo el Perú y modelos exclusivos.
+              Zapatillas que definen tu estilo.
+              Modelos exclusivos y envíos a todo el Perú.
             </p>
 
             <div className="heroButtons">
@@ -68,6 +73,8 @@ function Home() {
               <a
                 className="btnPrimary"
                 href="https://wa.me/51902824286"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Comprar ahora
               </a>
@@ -83,12 +90,18 @@ function Home() {
 
           </div>
 
-        </div>
+          <div className="hero-bottom">
+            <span>ESTILO</span>
+            <span className="hero-line"></span>
+            <span>TIOURBAN</span>
+            <span className="hero-line"></span>
+            <span>STREETWEAR</span>
+          </div>
+
+        </section>
 
         <StyleCategories />
-
         <SliderCategorias />
-
         <GallerySection />
 
       </main>

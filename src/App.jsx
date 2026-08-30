@@ -6,7 +6,7 @@ import Contacto from "./pages/Contacto";
 import ProductPage from "./pages/ProductPage";
 
 import Navbar from "./components/navbar/Navbar";
-import Redes from "./components/Redes";
+
 import Checkout from "./pages/Checkout";
 import Footer from "./components/Footer";
 
@@ -31,8 +31,6 @@ function App() {
           },
         }}
       />
-
-      <Redes />
 
       <Navbar />
 

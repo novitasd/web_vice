@@ -34,7 +34,7 @@ function DesktopSearch({
       <input
         type="text"
         className="search-input"
-        placeholder="Encuentra estilos y marcas"
+        placeholder="buscar"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
         onFocus={() => setSearchOpen(true)}
